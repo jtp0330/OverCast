@@ -3,3 +3,5 @@ The following is a 2D platformer with shoot em' up features. The user plays as a
 Art and Animation: Shania De Ocampo
 Programming: Jared Park
 Music and Sounds from ZapSplat
+
+Link to Game on Itch.io: https://jtp0330.itch.io/overcast
