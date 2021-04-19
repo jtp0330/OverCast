@@ -4,4 +4,4 @@ Art and Animation: Shania De Ocampo
 Programming: Jared Park
 Music and Sounds from ZapSplat
 
-Link to Game on Itch.io: https://jtp0330.itch.io/overcast
+Link to Game on itch.io: https://jtp0330.itch.io/overcast
