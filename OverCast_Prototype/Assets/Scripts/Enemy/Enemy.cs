@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     //health if wanted or state represented in boolean
     public int health = 10;
     //deatheffect for extra
-    public GameObject deathEffect;
+    //public GameObject deathEffect;
     //public float speed;
    // public bool moveRight;
     [HideInInspector]
@@ -17,7 +17,8 @@ public class Enemy : MonoBehaviour
     public float walkspeed;
     public float distance;
     public Transform groudcheckpos;
-    public Transform wallcheckpos;
+    //check for walls
+    //public Transform wallcheckpos;
     public LayerMask groundlayer;
     public Collider2D bodycollide;
 
@@ -31,9 +32,9 @@ public class Enemy : MonoBehaviour
         //:modify for falling in general(ex. falling down stairs)
         RaycastHit2D groundInfo = Physics2D.Raycast(groudcheckpos.position, Vector2.down, distance);
         //2nd raycast to check if hits a wall
-        RaycastHit2D wallInfo = Physics2D.Raycast(wallcheckpos.position, Vector2.left, distance);
+        //RaycastHit2D wallInfo = Physics2D.Raycast(wallcheckpos.position, Vector2.left, distance);
 
-        if (!groundInfo || !wallInfo)
+        if (!groundInfo)
         {
             if(!moveLeft)
             {
@@ -59,7 +60,8 @@ public class Enemy : MonoBehaviour
             transform.localScale = new Vector2(2, 2);
         }
         */
-    }
+}
+    //alternate method to check when to turn
 /*
     void OnTriggerEnter2D(Collider2D trig)
     {
