@@ -79,7 +79,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 70
   jumpForce: 475
-  crouchSpeed: 0.36
   movementSmoothing: 0.091
   airControl: 1
   whatIsGround:
@@ -87,13 +86,10 @@ MonoBehaviour:
     m_Bits: 256
   groundCheck: {fileID: 2555249268565994470}
   ceilingCheck: {fileID: 2555249268405180357}
-  crouchDisableCollider: {fileID: 0}
   isGrounded: 0
   isMoving: 0
+  am: {fileID: 0}
   OnLandEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnCrouchEvent:
     m_PersistentCalls:
       m_Calls: []
 --- !u!58 &2555249267654431936
@@ -555,7 +551,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.95, y: 0.62}
+  m_Size: {x: 1.1, y: 1.1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

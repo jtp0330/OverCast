@@ -137,3 +137,4 @@ MonoBehaviour:
   rb: {fileID: 3287064713245073144}
   damage: 50
   impactEffect: {fileID: 0}
+  bulletTraveltime: 0

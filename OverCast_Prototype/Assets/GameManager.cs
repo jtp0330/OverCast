@@ -7,19 +7,20 @@ public class GameManager : MonoBehaviour
 {
     //lives and score
     public int hearts = 1;
-   // private int score = 0;
+    // private int score = 0;
 
     public Transform spawnPos;
 
     public Transform playertrans;
 
     public GameObject Player;
-
+    //strings to load the GameOver screen and reload previous scene
     [SerializeField] private string sceneName;
+    [SerializeField] private string nextScene;
 
     public void Start()
     {
-
+      
     }
 
     private void Update()
@@ -41,10 +42,11 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         Debug.Log("GAME OVER");
+       
 
-        SceneManager.LoadScene(sceneName);
+       SceneManager.LoadScene(sceneName);
 
         if (Input.GetButtonDown("Submit"))
-            SceneManager.LoadScene("Prototype");
+            SceneManager.LoadScene(nextScene);
     }
 }
