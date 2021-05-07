@@ -16,7 +16,10 @@ public class Enemy : MonoBehaviour
     public Rigidbody2D rb;
     public float walkspeed;
     public float distance;
+    //transforms to check the ground position 
+    //and wall positions
     public Transform groudcheckpos;
+    public Transform wallcheckpos;
     //check for walls
     //public Transform wallcheckpos;
     public LayerMask groundlayer;
@@ -30,8 +33,9 @@ public class Enemy : MonoBehaviour
         transform.Translate(Vector2.left * walkspeed * Time.deltaTime);
         //1st raycast to check if falls off platform
         //:modify for falling in general(ex. falling down stairs)
-        RaycastHit2D groundInfo = Physics2D.Raycast(groudcheckpos.position, Vector2.down, distance);
+        RaycastHit2D groundInfo = Physics2D.Raycast(groudcheckpos.position, Vector2.down * Vector2.left, distance);
         //2nd raycast to check if hits a wall
+        //RaycastHit2D wallInfo = Physics2D.Raycast(wallcheckpos.position, Vector2.left, 1);
         //RaycastHit2D wallInfo = Physics2D.Raycast(wallcheckpos.position, Vector2.left, distance);
 
         if (!groundInfo)
@@ -47,7 +51,22 @@ public class Enemy : MonoBehaviour
                 moveLeft = false;
             }
         }
-
+        //checks if wall is in front
+        /*
+        if (wallInfo)
+        {
+            if (!moveLeft)
+            {
+                transform.eulerAngles = new Vector3(0, -180, 0);
+                moveLeft = true;
+            }
+            else
+            {
+                transform.eulerAngles = new Vector3(0, 0, 0);
+                moveLeft = false;
+            }
+        }
+        */
         /*
         if (moveRight)
         {

@@ -36,10 +36,15 @@ public class RainbowBullet : MonoBehaviour
         //print what bullet hit to screen
         //Debug.Log(hitInfo.name);
        Enemy enemy = hitInfo.GetComponent<Enemy>();
+       Enemy2_darkcloud enemy2 = hitInfo.GetComponent<Enemy2_darkcloud>();
        if(enemy != null)
         {
             enemy.TakeDamage(damage);
         } 
+       else if(enemy2 != null)
+        {
+            enemy2.TakeDamage(damage);
+        }
 
        //fix this
         Instantiate(impactEffect, transform.position, transform.rotation);

@@ -7,7 +7,7 @@ public class Enemy2_darkcloud : MonoBehaviour
 
     //health if wanted or state represented in boolean
     public int health = 10;
-    public int speed = 5;
+    //public int speed = 5;
     public Rigidbody2D rb;
     public Collider2D bodycollide;
     //deatheffect for extra
@@ -15,33 +15,35 @@ public class Enemy2_darkcloud : MonoBehaviour
     //public float speed;
     public bool moveRight;
     [HideInInspector]
-    int moveTimer = 20;
-    int i = 0;
+    
+    int changedirect = 5;
+    
 
     // Update is called once per frame
     void Update()
     {
-        i = 0;
-        if (!moveRight)
+     /*   if(!moveRight)
         {
-            while (i < moveTimer)
+            while (!moveRight)
             {
-                transform.Translate(Vector2.left * speed * Time.deltaTime);
-                i++;
+                if (Time.time % changedirect == 0)
+                {
+                    moveRight = true;
+                }
+                else
+                    transform.Translate(Vector2.left * speed * Time.deltaTime);
             }
-            moveRight = true;
-            //i = 0;
         }
         else
         {
-            while(i < moveTimer)
+            while(moveRight)
             {
-                transform.Translate(Vector2.right * speed * Time.deltaTime);
-                i++;
+                if(Time.time % changedirect == 0)
+                    moveRight = false;
+                else
+                    transform.Translate(Vector2.right * speed * Time.deltaTime);
             }
-            moveRight = false;
-            //i = 0;
-        }
+        }*/   
     }
 
     public void TakeDamage(int damage)

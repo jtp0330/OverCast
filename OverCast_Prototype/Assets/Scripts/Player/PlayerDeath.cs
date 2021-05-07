@@ -5,15 +5,15 @@ using UnityEngine;
 public class PlayerDeath : MonoBehaviour
 {
     public GameManager game;
-
+    public Health h;
 
     // Update is called once per frame
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.tag == "Enemy")
         {
-            game.hearts--;
-            if(game.hearts <= 0)
+            game.h.Damage();
+            if(game.h.health <= 0)
                 Destroy(gameObject);
         }
     }

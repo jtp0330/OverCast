@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 2866428252584289685}
   - component: {fileID: 7625866784348788678}
   - component: {fileID: 652092724086808053}
+  - component: {fileID: 6297139671082392569}
   m_Layer: 9
   m_Name: Final_Pig_Player 1
   m_TagString: Player
@@ -385,6 +386,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpSound: {fileID: 2866428252584289684}
   shootSound: {fileID: 7625866784348788678}
+--- !u!114 &6297139671082392569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2555249267654431943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 221434179ce45db4799ba260a9b46fba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2555249267694898435
 GameObject:
   m_ObjectHideFlags: 0

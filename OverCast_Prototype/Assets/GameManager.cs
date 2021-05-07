@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     //lives and score
-    public int hearts = 1;
+    public Health h;
+   
     // private int score = 0;
 
     public Transform spawnPos;
@@ -18,14 +19,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private string sceneName;
     [SerializeField] private string nextScene;
 
-    public void Start()
-    {
-      
-    }
-
     private void Update()
     {
-        if (hearts <= 0)
+        if (h.health <= 0)
         {
             Destroy(Player);
             GameOver();
@@ -33,7 +29,7 @@ public class GameManager : MonoBehaviour
         else if (playertrans.position.y < -180)
         {
             playertrans.position = spawnPos.position;
-            hearts--;
+            h.Damage();
         }
         //*Instantly restart level script
         //*first need to incorporate a switch to play again

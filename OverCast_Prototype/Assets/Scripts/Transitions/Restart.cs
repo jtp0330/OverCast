@@ -6,17 +6,23 @@ using UnityEngine.SceneManagement;
 public class Restart : MonoBehaviour
 {
     //name of previous level
-    string baseName;
-    string sceneName;
+    //string baseName;
+    public string sceneName;
+    //int[] level;
+
+    void Start()
+    {
+    //    level = new int[5];
+    }
 
     void Update()
     {
-
+        /*
         if (baseName.Equals("Prototype"))
-            sceneName = baseName;
+            sceneName = "Prototype";
         else if (baseName.Equals("Level_2_OC"))
-            sceneName = baseName;
-
+            sceneName = "Level_2_OC";
+         */
         if (Input.GetButtonDown("Submit"))
             SceneManager.LoadScene(sceneName);
     }
