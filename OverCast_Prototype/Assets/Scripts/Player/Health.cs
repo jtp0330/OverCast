@@ -18,13 +18,24 @@ public class Health : MonoBehaviour
 
 
     // Update is called once per frame
+
+    // Update is called once per frame
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Enemy")
+        {
+            
+            if (health <= 1)
+                Die();
+            else
+                Damage();
+        }
+    }
+
     void Update()
     {
-        if (health > numHearts)
-            numHearts = health;
-
-        if (health <= 0)
-            Die();
+        //if (health > numHearts)
+        //    numHearts = health;
 
 
         for (int i = 0; i < hearts.Length; i++)
@@ -45,15 +56,29 @@ public class Health : MonoBehaviour
 
     public void Damage()
     {
-        if (health <= 0 || numHearts <= 0)
+        if (health <= 1)
+        {
+            hearts[0].sprite = emptyheart;
+            health--;
             Die();
+        }
         else
-            hearts[health--].sprite = emptyheart;
+        {
+            if (health == 0)
+                Die();
+            else
+            {
+                health--;
+                hearts[health].sprite = emptyheart;
+            }
+        } 
             //numHearts--;
     }
 
     public void Die()
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        gameObject.SetActive(false);
+        game.GameOver();
     }
 }

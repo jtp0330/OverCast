@@ -9,6 +9,9 @@ public class NoseGun : MonoBehaviour
     public Animator animator;
     //[SerializeField] AudioSource shootSound;
     [SerializeField]AudioManager am;
+    //time for allowing player to shoot
+    private float timeBtwShots;
+    public float startTimeBtwShots;
 
     private void Awake()
     {
@@ -17,10 +20,17 @@ public class NoseGun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (timeBtwShots <= 0)
         {
-
-            Shoot();
+            if (Input.GetButtonDown("Fire1"))
+            {
+                Shoot();
+                timeBtwShots = startTimeBtwShots;
+            }
+        }
+        else
+        {
+            timeBtwShots -= Time.deltaTime; 
         }
     }
 

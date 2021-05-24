@@ -8,25 +8,21 @@ public class RainbowBullet : MonoBehaviour
     public Rigidbody2D rb;
     public int damage = 10;
     public GameObject impactEffect;
-    public double bulletTraveltime = 0.0;
+    public float bulletlifetime;
 
     //Layermask used to account for collision with ground layer and non other non "Enemy" objects
     //public LayerMask<Ground> ground;
     //bullet launches from shootPoint across screen from left to right
-    void Start()
+    private void Start()
     {
-        rb.velocity = transform.right * speed;
-
+       Invoke("DestroyProjectile",bulletlifetime);
     }
 
     void Update()
     {
 
-        if (bulletTraveltime > 5.0)
-            Destroy(gameObject);
-        else
-            //rb.velocity = transform.right * speed;
-            bulletTraveltime+=0.1;
+        rb.velocity = transform.right * speed;
+        Invoke("DestroyProjectile", bulletlifetime);
 
     }
     //script for bullet damage mechanic
@@ -37,24 +33,42 @@ public class RainbowBullet : MonoBehaviour
         //Debug.Log(hitInfo.name);
        Enemy enemy = hitInfo.GetComponent<Enemy>();
        Enemy2_darkcloud enemy2 = hitInfo.GetComponent<Enemy2_darkcloud>();
+       Boss_1 bs1 = hitInfo.GetComponent<Boss_1>();
+       //checks if hits enemy, then deals damage
        if(enemy != null)
         {
+            //if collide with enemy or ground
+            if (hitInfo.gameObject.CompareTag("Ground") || hitInfo.gameObject.CompareTag("Enemy"))
+                DestroyProjectile();
             enemy.TakeDamage(damage);
+            //DestroyProjectile();
         } 
        else if(enemy2 != null)
         {
+            //if collide with enemy or ground
+            if (hitInfo.gameObject.CompareTag("Ground") || hitInfo.gameObject.CompareTag("Enemy"))
+                DestroyProjectile();
             enemy2.TakeDamage(damage);
+            //DestroyProjectile();
+        }
+       else if(bs1 != null)
+        {
+            //if collide with enemy or ground
+            if (hitInfo.gameObject.CompareTag("Ground") || hitInfo.gameObject.CompareTag("Enemy"))
+                DestroyProjectile();
+            bs1.TakeDamage(damage);
         }
 
-       //fix this
-        Instantiate(impactEffect, transform.position, transform.rotation);
-        
-        Destroy(impactEffect);
+       //if collide with enemy or ground
+        if (hitInfo.gameObject.CompareTag("Ground") || hitInfo.gameObject.CompareTag("Enemy"))
+            DestroyProjectile();
 
-        if (hitInfo.gameObject.CompareTag("Ground"))
-            Destroy(gameObject);
-
-       Destroy(gameObject);
+       
     }
-    
+
+    void DestroyProjectile()
+    {
+        Instantiate(impactEffect, transform.position, Quaternion.identity);
+        Destroy(gameObject);
+    }
 }

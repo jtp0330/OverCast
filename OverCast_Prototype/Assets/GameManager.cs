@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     //lives and score
     public Health h;
+    //public Restart r;
    
     // private int score = 0;
 
@@ -21,15 +22,18 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (h.health <= 0)
+        //if (h.health <= 0)
+        // {
+        //    Destroy(Player);
+        //    GameOver();
+        // }
+        if (playertrans.position != null)
         {
-            Destroy(Player);
-            GameOver();
-        }
-        else if (playertrans.position.y < -180)
-        {
-            playertrans.position = spawnPos.position;
-            h.Damage();
+            if (playertrans.position.y < -150)
+            {
+                playertrans.position = spawnPos.position;
+                h.Damage();
+            }
         }
         //*Instantly restart level script
         //*first need to incorporate a switch to play again
@@ -38,8 +42,8 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         Debug.Log("GAME OVER");
-       
 
+       
        SceneManager.LoadScene(sceneName);
 
         if (Input.GetButtonDown("Submit"))

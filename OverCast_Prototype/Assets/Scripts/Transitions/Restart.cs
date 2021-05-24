@@ -7,23 +7,39 @@ public class Restart : MonoBehaviour
 {
     //name of previous level
     //string baseName;
-    public string sceneName;
+    string sceneName;
+    private int lvl;
     //int[] level;
 
     void Start()
     {
-    //    level = new int[5];
+        lvl = 1;
+    }
+    public void changeLevel(int l)
+    {
+        lvl = l;
+    }
+
+    public void resetLevel()
+    {
+        lvl = 1;
     }
 
     void Update()
     {
-        /*
-        if (baseName.Equals("Prototype"))
-            sceneName = "Prototype";
-        else if (baseName.Equals("Level_2_OC"))
-            sceneName = "Level_2_OC";
-         */
+
         if (Input.GetButtonDown("Submit"))
-            SceneManager.LoadScene(sceneName);
+        {
+            /*
+            if (lvl == 1)
+                sceneName = "Prototype";
+            else if (lvl == 2)
+                sceneName = "Level_2_OC";
+            else if (lvl == 3)
+                sceneName = "Boss_fight";
+            */
+            SceneManager.LoadScene("Prototype");
+        }
+            
     }
 }

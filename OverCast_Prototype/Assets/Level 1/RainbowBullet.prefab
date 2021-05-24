@@ -135,6 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   rb: {fileID: 3287064713245073144}
-  damage: 50
-  impactEffect: {fileID: 0}
-  bulletTraveltime: 0
+  damage: 10
+  impactEffect: {fileID: 4290386306696496474, guid: d65cc8e0837704247afc05b0f51102f8,
+    type: 3}
+  bulletlifetime: 0.5

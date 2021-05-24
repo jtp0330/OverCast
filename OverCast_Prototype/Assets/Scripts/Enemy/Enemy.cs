@@ -51,57 +51,17 @@ public class Enemy : MonoBehaviour
                 moveLeft = false;
             }
         }
-        //checks if wall is in front
-        /*
-        if (wallInfo)
-        {
-            if (!moveLeft)
-            {
-                transform.eulerAngles = new Vector3(0, -180, 0);
-                moveLeft = true;
-            }
-            else
-            {
-                transform.eulerAngles = new Vector3(0, 0, 0);
-                moveLeft = false;
-            }
-        }
-        */
-        /*
-        if (moveRight)
-        {
-            transform.Translate(2 * Time.deltaTime * speed, 1, 0);
-            transform.localScale = new Vector2(2,2);
-        }
-        else
-        {
-            transform.Translate(2 * Time.deltaTime * speed, 1, 0);
-            transform.localScale = new Vector2(2, 2);
-        }
-        */
 }
-    //alternate method to check when to turn
-/*
-    void OnTriggerEnter2D(Collider2D trig)
-    {
-        if (trig.gameObject.CompareTag("turn"))
-        {
-            if (moveRight)
-            {
-                moveRight = false;
-            }
-            else
-            {
-                moveRight = true;
-            }
-        }
-    }
-*/
     public void TakeDamage(int damage)
     {
-        health -= damage;
+        loseHealth(damage);
+    }
 
-        if(health <= 0)
+    private void loseHealth(int points)
+    {
+        health -= points;
+
+        if (health <= 0)
         {
             Die();
         }
@@ -112,4 +72,8 @@ public class Enemy : MonoBehaviour
         //Instantiate(deathEffect, transform.position, );
         Destroy(gameObject);
     }
+
+    //practice script for possible Enemy patrol replacement
+
+
 }

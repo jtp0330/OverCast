@@ -276,6 +276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   game: {fileID: 0}
+  h: {fileID: 0}
 --- !u!82 &7625866784348788678
 AudioSource:
   m_ObjectHideFlags: 0
@@ -398,6 +399,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 221434179ce45db4799ba260a9b46fba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 3
+  numHearts: 3
+  damage: {fileID: 2555249267654431937}
+  hearts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  fullheart: {fileID: 21300000, guid: 47340b4856107084b9f49fbc5ae3266a, type: 3}
+  emptyheart: {fileID: 21300000, guid: b7f2089724b3f9b44b917cc2fe29a832, type: 3}
+  game: {fileID: 0}
 --- !u!1 &2555249267694898435
 GameObject:
   m_ObjectHideFlags: 0
