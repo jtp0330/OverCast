@@ -11,7 +11,7 @@ public class Explosion : MonoBehaviour
     {
         Invoke("DestroyExplode", life);
     }
-    void DestoryExplode()
+    public void DestoryExplode()
     {
         Destroy(gameObject);
     }

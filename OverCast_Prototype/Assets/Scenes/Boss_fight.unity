@@ -128,6 +128,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 829219096746464858, guid: b4f66b13ee7d661478c08d4fbc87292e,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: aad66a6515301bd499c3bff6741801ef, type: 3}
     - target: {fileID: 4693716889318905179, guid: b4f66b13ee7d661478c08d4fbc87292e,
         type: 3}
       propertyPath: m_Name
@@ -193,6 +198,11 @@ PrefabInstance:
       propertyPath: startTimeBtwShots
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 5013322501500593160, guid: b4f66b13ee7d661478c08d4fbc87292e,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1ce55979dd7aacc488d7659f9af8dd12, type: 3}
     - target: {fileID: 5013322501500593161, guid: b4f66b13ee7d661478c08d4fbc87292e,
         type: 3}
       propertyPath: game
@@ -3362,7 +3372,7 @@ PrefabInstance:
     - target: {fileID: 6151979701566119994, guid: 40e4b62966d773e4a92b26958221a0b6,
         type: 3}
       propertyPath: orthographic size
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6151979701566119994, guid: 40e4b62966d773e4a92b26958221a0b6,
         type: 3}
